@@ -1,0 +1,351 @@
+
+@media (max-height:1020px),(max-width:1330px) {
+    .page-mid-img>img {
+        width: 550px;
+    }
+    
+    .mid-img-layout img {
+        width: 300px;
+    }
+    
+    .page-menu-item.news-item {
+        top: 50px;
+    }
+    
+    .menu-item-line {
+        width: 220px;
+    }
+    
+    .menu-link.news-link {
+        top: 35px;
+    }
+    
+    .page-menu-item.contacts-item {
+        top: 285px;
+    }
+    
+    .page-menu-item.services-item {
+        top: 479px;
+        left: -8px;
+        transform: rotate(-52deg);
+    }
+    
+    .page-menu-item.services-item .menu-item-line {
+        width: 110px;
+    }
+    
+    .page-menu-item.partners-item {
+        top: 354px;
+        right: -200px;
+        transform: rotate(198deg);
+    }
+    
+    .page-menu-item.projects-item {
+        top: 104px;
+    }
+    
+    .page-menu-item.production-item {
+        left: 162px;
+        top: -37px;
+    }
+    
+    
+    .menu-link.contacts-link {
+        top: 400px;
+    }
+    
+    .menu-link.partners-link {
+        top: 405px;
+    }
+    
+    .menu-link.services-link {
+        top: 590px;
+        left: 64px;
+    }
+    
+    .menu-link.info-link {
+        right: 32px;
+        top: 20px;
+    }
+}
+
+@media (max-height:900px),(max-width:1200px) {
+    .page-mid-img>img {
+        width: 407px;
+    }
+    
+    .menu-link {
+        font-size: 18px;
+    }
+    
+    .menu-tiem-circle {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .page-menu-item .menu-item-line {
+        width: 170px;
+    }
+    
+    .page-menu-item.news-item {
+        top: 40px;
+        left: -196px;
+    }
+    
+    .page-menu-item.contacts-item {
+        top: 224px;
+        left: -207px;
+    }
+    
+    .page-menu-item.services-item {
+        top: 320px;
+        transform: rotate(-50deg);
+    }
+    
+    .page-menu-item.partners-item {
+        top: 279px;
+        right: -170px;
+    }
+    
+    .mid-img-layout img {
+        width: 200px;
+    }
+    
+    .menu-link.info-link {
+        right: -5px;
+        top: 42px;
+    }
+    
+    .menu-link.info-link img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .page-social-container {
+        padding: 10px 32px;
+        width: 140px;
+        height: 50px;
+        top: calc(100vh - 50px);
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .page-social-container .social-item {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .page-social-container .social-item img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .page-social-container .social-item:nth-child(2) img {
+        width: 11px;
+        align-self: flex-start;
+        margin-left: 5px;
+    }
+    
+    .menu-link.news-link {
+        left: -169px;
+        top: 25px;
+    }
+    
+    .menu-link.contacts-link {
+        top: 327px;
+        left: -175px;
+    }
+    
+    .menu-link.services-link {
+        top: 413px;
+    }
+    
+    .menu-link.production-link {
+        left: 307px;
+        top: -120px;
+    }
+    
+    .menu-link.partners-link {
+        top: 329px;
+        right: -270px;
+    }
+
+    .social-top{
+        top: 0;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .menu-link:hover {
+        font-size: 20px;
+    }
+
+    .menu-link.info-link:hover img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .page-logo {
+        padding: 40px;
+    }
+    
+    .logo-text {
+        font-size: 22px;
+    }
+    
+    
+    .main-page-layer img:first-child {
+        width: 269px;
+        left: -50px;
+    }
+    
+    .main-page-layer img:last-child {
+        width: 269px;
+        right: -50px;
+    }
+
+
+}
+
+@media (max-width:1300px){
+    .main-page-layer img:first-child {
+        width: 269px;
+        left: -50px;
+    }
+    
+    .main-page-layer img:last-child {
+        width: 269px;
+        right: -50px;
+    }
+
+    .page-social-container {
+        padding: 10px 32px;
+        width: 140px;
+        height: 50px;
+        top: calc(100vh - 50px);
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .page-social-container .social-item {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .page-social-container .social-item img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .page-social-container .social-item:nth-child(2) img {
+        width: 11px;
+        align-self: flex-start;
+        margin-left: 5px;
+    }
+}
+
+@media (max-height:700px){
+    .page-content-container {
+        height: calc(100vh - 200px);
+    }
+    
+    .page-menu-item.news-item {
+        top: -40px;
+        left: -32px;
+        transform: rotate(45deg);
+    }
+    
+    .page-menu-item.contacts-item {
+        top: 2;
+    }
+    
+    .page-menu-item.contacts-item {
+        top: 109px;
+        transform: rotate(-5deg);
+        left: -129px;
+    }
+    
+    .page-menu-item.services-item {
+        top: 259px;
+        left: -91px;
+        transform: rotate(-25deg);
+    }
+    
+    .page-menu-item .menu-item-line {
+        width: 90px;
+    }
+    
+    .menu-tiem-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .page-menu-item.partners-item {
+        right: -101px;
+    }
+    
+    .page-menu-item.projects-item {
+        right: -132px;
+    }
+    
+    .page-menu-item.production-item .menu-item-line {
+        width: 100px;
+    }
+    
+    .page-menu-item.production-item {
+        top: -50px;
+        transform: rotate(101deg);
+    }
+    
+    .menu-link.news-link {
+        top: -55px;
+        left: -8px;
+    }
+    
+    .menu-link {
+        font-size: 16px;
+    }
+    
+    .menu-link.contacts-link {
+        left: -119px;
+        top: 154px;
+    }
+    
+    .menu-link.services-link {
+        top: 325px;
+        left: -91px;
+    }
+    
+    .menu-link.partners-link {
+        right: -170px;
+    }
+    
+    .menu-link.production-link {
+        top: -80px;
+        left: 243px;
+    }
+    .menu-link.info-link {
+        top: 10px;
+        right: 22px;
+    }
+
+    .all-pages-menu-container {
+        padding-top: 20px;
+    }
+    
+    .all-top-bar {
+        padding: 15px 0;
+    }
+    
+    .contact-info-container {
+        padding-left: 35px;
+    }
+}
+
+@media (max-width:1325px){
+.content{
+    width: 800px;
+}
+.all-pages-menu{
+    width: 800px;
+    font-size: 12px;
+    padding: 7px;
+}
+}
