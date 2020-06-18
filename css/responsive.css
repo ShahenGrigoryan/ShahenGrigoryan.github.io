@@ -348,6 +348,9 @@
 }
 
 @media (max-width:1023px){
+    .social-mob-pages{
+        display: none;
+    }
     .page-social-container {
         right: calc(50% - 70px);
     }
@@ -674,6 +677,20 @@
 .news-image {
     height: calc(85vh - 25px);
 }
+.news-page .next-btn-container.control-btn {
+    left: calc(72vw );
+    right: unset;
+}
+
+.news-page .prev-btn-container.control-btn {
+    right: 72vw;
+    left: unset;
+    
+}
+.news-page .control-btn {
+    width: 15px;
+}
+
 }
 
 @media(min-width:761px){

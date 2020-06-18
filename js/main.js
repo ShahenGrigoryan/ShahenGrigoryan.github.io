@@ -10,15 +10,20 @@ function menuLinkAction(item){
         $(".home-page").removeClass("go-top");
         $(".all-pages").removeClass("page-active");
         $(".page-social-container").removeClass("social-top");
+            $(".page-social-container").removeClass("social-mob-pages");
     }else{
-
+        $(".page-social-container").addClass("social-mob-pages");
         $(".home-page").addClass("go-top").removeClass("page-active");
         $(".page-social-container").addClass("social-top");
         $(".all-pages").addClass("page-active");
         $(".content").removeClass("page-active");
         $(`.${$(item).attr("data-link")}-page`).addClass("page-active");
         $(".all-menu-item-active").removeClass("all-menu-item-active");
-        $(`.${$(item).attr("data-link")}-item`).addClass("all-menu-item-active");
+        $(".all-pages-menu-container").find(`.${$(item).attr("data-link")}-item`)
+        .addClass("all-menu-item-active");
+        $(".mobile-menu-item-active").removeClass("mobile-menu-item-active");
+        $(".mobile-menu").find(`.${$(item).attr("data-link")}-item`)
+        .addClass("mobile-menu-item-active");
     }
 }
 
@@ -47,6 +52,8 @@ $(window).on("mousemove",function(e){
 })
 
 
+
+
 $(document).on("click",".menu-link",function(){
   menuLinkAction(this);
 })
@@ -58,6 +65,9 @@ $(document).on("click",".mobile-menu-item",function(){
    toggleBurger();
 })
 
+$(document).on("click", ".page-logo", function(){
+    menuLinkAction(this);
+})
 
 
 $(document).on("click",".all-menu-item",function(){
