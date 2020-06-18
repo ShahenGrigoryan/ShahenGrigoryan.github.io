@@ -152,12 +152,8 @@ $(document).on("click", ".post-read-btn", function () {
 
 $(document).on("click",".page-main-content",function(){
     if($(window).width()<1024){
-        $(".home-page").addClass("go-top").removeClass("page-active");
-        $(".all-pages").addClass("page-active");
-        $(".content").removeClass("page-active");
-        $(`.information-page`).addClass("page-active");
-        $(".all-menu-item-active").removeClass("all-menu-item-active");
-        $(`.information-item`).addClass("all-menu-item-active");
+       menuLinkAction(".info-link");
+
 
     }
 })
