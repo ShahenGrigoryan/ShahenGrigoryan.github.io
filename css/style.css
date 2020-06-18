@@ -383,8 +383,8 @@ body{
     transition:all .5s ease-in-out ;
 }
 
-.social-top{
-    top: 0!important;
+.page-social-container.social-top{
+    top: 0;
     border-radius: 0 0 45px 45px;
 }
 .page-social-container .social-item:first-child img {
@@ -946,8 +946,28 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     color: black;
 }
 
+.logo-img img {
+    width: 200px;
+    height: auto;
+}
 
+.burger-btn{
+    display: none;
+    
+}
 
+.mob-top-bar{
+    display: none;
+}
+
+.page-social-container.social-top{
+    top: 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.burger-menu-container{
+    display: none;
+}
 
 
 

@@ -1,0 +1,7 @@
+<svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="burger-btn">
+<rect id="top_line" width="30" height="3.14286" rx="1" fill="white"/>
+<rect id="mid_line" y="9.42859" width="30" height="3.14286" rx="1" fill="white"/>
+<rect id="bot_line" y="18.8571" width="30" height="3.14286" rx="1" fill="white"/>
+</g>
+</svg>

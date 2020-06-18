@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="burger-btn">
+<rect id="top_line" y="21.2132" width="30" height="3.14286" rx="1" transform="rotate(-45 0 21.2132)" fill="white"/>
+<rect id="bot_line" x="2.22235" y="6.10352e-05" width="30" height="3.14286" rx="1" transform="rotate(45 2.22235 6.10352e-05)" fill="white"/>
+</g>
+</svg>

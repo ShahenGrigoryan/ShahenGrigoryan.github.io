@@ -7,10 +7,16 @@
 
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsivenew.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script>
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+    </script>
 
 </head>
 <body>
+    
 
     <div class="popup-container">
         <div class="popup-main">
@@ -103,6 +109,37 @@
         </div>
        
     </div>
+
+    <div class="burger-menu-container">
+        <nav>
+            <ul class="mobile-menu">
+                <li data-link="home" class="mobile-menu-item mobile-menu-item-active">
+                    ГЛАВНАЯ
+                </li>
+                <li data-link="information" class="mobile-menu-item">
+                    О КОМПАНИИ
+                </li>
+                <li data-link="production" class="mobile-menu-item">
+                    ПРОДУКЦИЯ
+                </li>
+                <li data-link="services" class="mobile-menu-item">
+                    УСЛУГИ
+                </li>
+                <li data-link="partners" class="mobile-menu-item">
+                    НАШИ ПАРТНЕРЫ
+                </li>
+                <li data-link="news" class="mobile-menu-item">
+                    НОВОСТИ
+                </li>
+                <li data-link="projects" class="mobile-menu-item">
+                    РЕАЛИЗОВАННЫЕ ПРОЕКТЫ
+                </li>
+                <li data-link="contacts" class="mobile-menu-item">
+                    КОНТАКТЫ
+                </li>
+            </ul>
+        </nav>
+    </div>
     
 
 
@@ -118,13 +155,17 @@
         <div class="home-page">
            
             <div class="main-page-top-bar">
+                <div class="burger-btn">
+                    <div class="burger-line top-line"></div>
+                    <div class="burger-line mid-line"></div>
+                    <div class="burger-line bot-line"></div>
+
+                </div>
                 <div class="page-logo">
                     <div class="logo-img">
-                        <img src="img/logo-main.png" alt="Logo">
+                        <img src="img/logo.png" alt="Logo">
                     </div>
-                    <div class="logo-text">
-                        BOOMERANG TRADE LLC
-                    </div>
+                   
                     
                 </div>
 
@@ -226,14 +267,31 @@
                 </div>
                 <div class="page-logo">
                     <div class="logo-img">
-                        <img src="img/logo-main.png" alt="Logo">
+                        <img src="img/logo.png" alt="Logo">
                     </div>
-                    <div class="logo-text">
-                        BOOMERANG TRADE LLC
-                    </div>
+                    
 
                    
                     
+                </div>
+            </div>
+            <div class="main-page-top-bar mob-top-bar">
+                <div class="burger-btn">
+                    <div class="burger-line top-line"></div>
+                    <div class="burger-line mid-line"></div>
+                    <div class="burger-line bot-line"></div>
+                </div>
+                <div class="page-logo">
+                    <div class="logo-img">
+                        <img src="img/logo.png" alt="Logo">
+                    </div>
+                   
+                    
+                </div>
+
+                <div class="change-lang-container">
+                    <img src="img/uk.png" alt="">
+                    <img src="img/russia.png" alt="">
                 </div>
             </div>
 
@@ -326,13 +384,19 @@
                         </div>
                         <div class="content projects-page">
                             <div class="prev-btn-container control-btn">
-                                <div class="prev-btn">
+                                <div class="prev-btn dn-pc-control">
                                     <img src="img/prev.svg" alt="Prev">
+                                </div>
+                                <div class="up-btn prev-btn dn-control">
+                                    <img src="img/up.svg" alt="Prev">
                                 </div>
                             </div>
                             <div class="next-btn-container control-btn">
-                                <div class="next-btn">
+                                <div class="next-btn dn-pc-control">
                                     <img src="img/next.svg" alt="Next">
+                                </div>
+                                <div class="down-btn next-btn dn-control">
+                                    <img src="img/down.svg" alt="Next">
                                 </div>
                             </div>
                             <div class="content-title">
@@ -343,7 +407,7 @@
                                 </div>
                                 <div class="swiper-wrapper">
 
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide project-slide">
                                        <div class="projects-container">
                                          <div class="project-item">
                                             <img src="img/icon1.png" alt="leroy">
@@ -372,7 +436,15 @@
                                        </div>
                                     </div>
 
-                                    <div class="swiper-slide">
+                                    <!-- <div class="swiper-slide project-slide">
+                                        <div class="projects-container">
+                                            
+                                        </div>
+                                    </div> -->
+                                       
+                              
+
+                                    <div class="swiper-slide project-slide">
                                         <div class="projects-container">
                                           <div class="project-item">
                                              <img src="img/icon1.png" alt="leroy">
@@ -401,7 +473,7 @@
                                         </div>
                                      </div>
 
-                                     <div class="swiper-slide">
+                                     <div class="swiper-slide project-slide">
                                         <div class="projects-container">
                                           <div class="project-item">
                                              <img src="img/icon1.png" alt="leroy">
