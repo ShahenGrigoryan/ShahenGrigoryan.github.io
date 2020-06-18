@@ -19,7 +19,8 @@ body{
     position: relative;
 }
 .main-page-stars {
-    position: absolute;
+    position: relative;
+    margin-bottom: -100vh;
     top: 0;
     left: 0;
     width: 100%;
@@ -973,4 +974,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .page-active{
     top: 0;
+}
+
+.swiper-button-disabled {
+    display: none;
 }
