@@ -22,6 +22,17 @@ function menuLinkAction(item){
     }
 }
 
+function billboardSizing(){
+    $(".content-page-layout").css("width",`${$(".content").eq(0)
+    .width()+($(".billboard-item").eq(0).children("img").width()+
+    $(".billboard-item").eq(0).children("img").width()*0.1
+    )}`);
+}
+
+$(document).ready(()=>{
+    billboardSizing();
+})
+
 $(window).on("mousemove",function(e){
     let y=(e.pageY/$(window).width())*30;
     let x=(e.pageX/$(window).width())*30;
@@ -59,61 +70,60 @@ $(document).on("click",".all-menu-item",function(){
 })
 
 
-setTimeout(()=>{
-    var slider=new Swiper('.slider-1',{
-        mousewheel: true,
-        keyboard: true,
-        slidesPerView: 1,
-        spaceBetween: 16,
-        pagination: {
-            el:'.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: $('.slider-1').parents(".content").find(".next-btn"),
-            prevEl: $('.slider-1').parents(".content").find(".prev-btn"),
-        },
-       
-    })
 
-    var slider2=new Swiper('.slider-2',{
-        mousewheel: true,
-        keyboard: true,
-        slidesPerView: 1,
-        spaceBetween: 16,
-        pagination: {
-            el:'.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints:{
-            1: {
-                direction: 'vertical',
-           
+        var slider=new Swiper('.slider-1',{
+            mousewheel: true,
+            keyboard: true,
+            slidesPerView: 1,
+            spaceBetween: 16,
+            pagination: {
+                el:'.swiper-pagination',
+                clickable: true,
             },
-            760: {
-                
-                direction: 'horizontal',
-                
-            }
-        },
-        navigation: {
-            nextEl: $('.slider-2').parents(".content").find(".next-btn"),
-            prevEl: $('.slider-2').parents(".content").find(".prev-btn"),
-        },
-        
-    })
-
-    slider2.on("fromEdge",function(){
-       $(".down-btn").show();
-       $(".up-btn").show();
-    })
-    slider2.on("reachEnd",function(){
-       $(".down-btn").hide();
-    })
-    slider2.on("reachBeginning",function(){
-       $(".up-btn").hide();
-    })
-})
+            navigation: {
+                nextEl: $('.slider-1').parents(".content").find(".next-btn"),
+                prevEl: $('.slider-1').parents(".content").find(".prev-btn"),
+            },
+           
+        })
+    
+        var slider2=new Swiper('.slider-2',{
+            mousewheel: true,
+            keyboard: true,
+            slidesPerView: 1,
+            spaceBetween: 16,
+            pagination: {
+                el:'.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints:{
+                1: {
+                    direction: 'vertical',
+               
+                },
+                760: {
+                    
+                    direction: 'horizontal',
+                    
+                }
+            },
+            navigation: {
+                nextEl: $('.slider-2').parents(".content").find(".next-btn"),
+                prevEl: $('.slider-2').parents(".content").find(".prev-btn"),
+            },
+            
+        })
+    
+        slider2.on("fromEdge",function(){
+           $(".down-btn").show();
+           $(".up-btn").show();
+        })
+        slider2.on("reachEnd",function(){
+           $(".down-btn").hide();
+        })
+        slider2.on("reachBeginning",function(){
+           $(".up-btn").hide();
+        })
 
 
 $(document).on("click", ".project-item", function () {
@@ -142,14 +152,15 @@ $(document).on("click", ".popup-close-btn", function () {
 })
 
 
-$(".content-page-layout").css("width",`${$(".content")
-.width()+($(".billboard-item").find("img").width()+50)}`);
 
-
+console.time("func")
 $(window).on("resize", function() {
-    $(".content-page-layout").css("width",`${$(".content")
-    .width()+($(".billboard-item").find("img").width()+50)}`);
+    setTimeout(() => {
+      billboardSizing();
+    }, 730);
+    
 })
+console.timeEnd("func")
 
 $(".video-play-button").on("click", function(){
     $(".video-playing-popup").fadeIn();
