@@ -121,9 +121,7 @@ $(document).on("click",".all-menu-item",function(){
            $(".down-btn").show();
            $(".up-btn").show();
         })
-        // slider2.on("reachEnd",function(){
-        //    $(".down-btn").hide();
-        // })
+      
         slider2.on("reachBeginning",function(){
            $(".up-btn").hide();
         })
