@@ -31,7 +31,9 @@ body{
     background-image: url(../img/stars.png);
     background-size: cover;
 }
-
+.popup-box {
+    overflow: hidden;
+}
 
 
 *{

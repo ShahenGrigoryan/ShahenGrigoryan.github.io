@@ -23,10 +23,14 @@ function menuLinkAction(item){
 }
 
 function billboardSizing(){
-    $(".content-page-layout").css("width",`${$(".content").eq(0)
-    .width()+($(".billboard-item").eq(0).children("img").width()+
-    $(".billboard-item").eq(0).children("img").width()*0.1
-    )}`);
+    let billSize=$(".billboard-item").eq(0).find("img").width();
+    if($(window).width()<=570){        
+        $(".content-page-layout").css("width","100%");
+    }else{
+
+        $(".content-page-layout").css("width",`${$(".content").eq(0)
+        .width()+(billSize+billSize/2)}`);
+    }
 }
 
 $(document).ready(()=>{

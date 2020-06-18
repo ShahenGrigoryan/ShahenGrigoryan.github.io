@@ -681,3 +681,10 @@
         display: none!important;
     }
 }
+
+@media(max-height:660px){
+    .page-main-content {
+        max-width: 200px;
+        margin-top: 50px;
+    }
+}
