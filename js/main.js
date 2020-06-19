@@ -38,21 +38,60 @@ function billboardSizing(){
     }
 }
 
+function sortSlides() {
+    
+    let slidesArr=[[]];
+    let container=$(".projects-container");
+    let index=0;
+    let slidesCount=$(window).width() <= 760 ? 4 : 8;
+    let sliderWrapper=$(".slider-2").find(".swiper-wrapper");
+
+    if(container.eq(0).find(".project-item").length == slidesCount) return;
+
+    for (let i = 0; i < container.length; i++) {
+        for (let j = 0; j < container.eq(i).find(".project-item").length; j++){
+            slidesArr[index].push(container.eq(i).find(".project-item").eq(j));
+            if (slidesArr[index].length == slidesCount) {
+                if (index < container.find(".project-item").length/slidesCount-1) {
+                    index++;
+                    slidesArr.push([]);
+                }
+            }
+        }
+    }
+
+    sliderWrapper.find(".swiper-slide").remove();
+
+    for (let i = 0; i<slidesArr.length; i++) {
+        $(
+            `
+            <div class="swiper-slide">
+            <div class="projects-container">
+            </div>
+            </div>
+            `
+        ).appendTo(sliderWrapper);
+        for (let j = 0; j < slidesArr[i].length; j++) {
+            $(".projects-container").eq(i).append(slidesArr[i][j][0]);
+        }
+    }
+
+    slider2.update();
+    console.timeEnd("slide")
+}
+
 $(document).ready(()=>{
     billboardSizing();
+    sortSlides();
 })
 
 $(window).on("mousemove",function(e){
     if($(window).width()>960){
-
         let y=(e.pageY/$(window).width())*30;
         let x=(e.pageX/$(window).width())*30;
         $(".main-page-stars").css("transform",`translate(-${x}px,-${y}px)`)
     }
 })
-
-
-
 
 $(document).on("click",".menu-link",function(){
   menuLinkAction(this);
@@ -68,7 +107,6 @@ $(document).on("click",".mobile-menu-item",function(){
 $(document).on("click", ".page-logo", function(){
     menuLinkAction(this);
 })
-
 
 $(document).on("click",".all-menu-item",function(){
     $(".all-menu-item-active").removeClass("all-menu-item-active");
@@ -88,11 +126,13 @@ $(document).on("click",".all-menu-item",function(){
 
 
 
-        var slider=new Swiper('.slider-1',{
+
+var slider=new Swiper('.slider-1',{
             mousewheel: true,
             keyboard: true,
             slidesPerView: 1,
             spaceBetween: 16,
+            updateOnWindowResize:true,
             pagination: {
                 el:'.swiper-pagination',
                 clickable: true,
@@ -102,9 +142,9 @@ $(document).on("click",".all-menu-item",function(){
                 prevEl: $('.slider-1').parents(".content").find(".prev-btn"),
             },
            
-        })
-    
-        var slider2=new Swiper('.slider-2',{
+})
+         
+var slider2=new Swiper('.slider-2',{
             mousewheel: true,
             keyboard: true,
             slidesPerView: 1,
@@ -129,49 +169,44 @@ $(document).on("click",".all-menu-item",function(){
                 prevEl: $('.slider-2').parents(".content").find(".prev-btn"),
             },
             
-        })
+})
     
-        slider2.on("fromEdge",function(){
-           $(".down-btn").show();
-           $(".up-btn").show();
-        })
+slider2.on("fromEdge",function(){
+    $(".down-btn").show();
+    $(".up-btn").show();
+})
       
-        slider2.on("reachBeginning",function(){
-           $(".up-btn").hide();
-        })
-
-
-$(document).on("click", ".project-item", function () {
-    $(".popup-container").css("display","flex");
+slider2.on("reachBeginning",function(){
+    $(".up-btn").hide();
 })
 
-
-$(document).on("click", ".post-read-btn", function () {
+$(document).on("click", ".project-item", function () {
     $(".popup-container").fadeIn();
 })
 
-$(document).on("click",".page-main-content",function(){
-    if($(window).width()<1024){
-       menuLinkAction(".info-link");
-
-
-    }
+$(document).on("click", ".post-read-btn", function () {
+    $(".popup-container").fadeIn();
 })
 
 $(document).on("click", ".popup-close-btn", function () {
     $(".popup-container").fadeOut();
 })
 
+$(document).on("click",".page-main-content",function(){
+    if($(window).width()<1024){
+       menuLinkAction(".info-link");
+    }
+})
 
-
-console.time("func")
 $(window).on("resize", function() {
+
+    sortSlides();
+
     setTimeout(() => {
       billboardSizing();
     }, 730);
     
 })
-console.timeEnd("func")
 
 $(".video-play-button").on("click", function(){
     $(".video-playing-popup").fadeIn();
