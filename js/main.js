@@ -149,6 +149,7 @@ var slider2=new Swiper('.slider-2',{
             keyboard: true,
             slidesPerView: 1,
             spaceBetween: 16,
+            updateOnWindowResize:true,
             pagination: {
                 el:'.swiper-pagination',
                 clickable: true,
@@ -183,7 +184,10 @@ slider2.on("reachBeginning",function(){
 $(document).on("click", ".project-item", function () {
     $(".popup-container").fadeIn();
 })
+$(document).on("click", ".service-item", function(){
+    $(".popup-container").fadeIn();
 
+})
 $(document).on("click", ".post-read-btn", function () {
     $(".popup-container").fadeIn();
 })
