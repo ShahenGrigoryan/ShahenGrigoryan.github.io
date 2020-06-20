@@ -80,10 +80,18 @@ function sortSlides() {
     console.timeEnd("slide")
 }
 
+function prodPage(){
+    $(".production-second-page").toggleClass("prod-go-right");
+    $(".production-first-page").toggleClass("prod-go-left");
+}
+
 $(document).ready(()=>{
     billboardSizing();
     sortSlides();
+    $(".map-main").scrollbar();
+    $(".popup-content").scrollbar();
 })
+
 
 $(window).on("mousemove",function(e){
     if($(window).width()>960){
@@ -196,6 +204,19 @@ $(document).on("click", ".popup-close-btn", function () {
     $(".popup-container").fadeOut();
 })
 
+$(document).on("click", ".go-back-btn", function() {
+
+})
+
+$(document).on("click",".production-page-item", function() {
+    if($(this).hasClass("prod-category-item") || $(this).hasClass("go-back-btn")){
+       prodPage();
+    }else{
+        $(".popup-container").fadeIn();
+    }
+})
+$(document).on("click", ".go-back-btn", prodPage)
+
 $(document).on("click",".page-main-content",function(){
     if($(window).width()<1024){
        menuLinkAction(".info-link");
@@ -232,3 +253,39 @@ $(".close-vid-btn").on("click", function(){
 
 $(".burger-btn").on("click",toggleBurger);
 
+let adress;
+$.ajax(
+	{
+		url:`https://geocode-maps.yandex.ru/1.x/?apikey=cf165b59-38ed-4f95-96cd-22a149cbb5b3&format=json&geocode=Moscow`,
+		success:function(data){
+				adress=data.response.GeoObjectCollection
+				.featureMember[0].GeoObject.Point.pos.split(" ").reverse();
+				ymaps.ready(init);
+		}
+		
+	}
+	)
+
+
+function init () {
+	
+    myMap = new ymaps.Map('contact-map', {
+        center: adress, 
+        zoom: 16,
+        controls:[]
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+     
+    }, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/placemark2.png',
+        iconImageSize: [50, 62],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-19, -65]
+    })
+    myMap.geoObjects
+    .add(myPlacemark);
+};
