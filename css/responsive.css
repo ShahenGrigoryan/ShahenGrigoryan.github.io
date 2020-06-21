@@ -374,12 +374,7 @@
     }
 }
 
-@media (max-height:620px){
-    .service-item .item-icon {
-        width: 50px;
-        height: 50px;
-    }
-}
+
 
 @media (max-width:1023px){
     .social-mob-pages{
@@ -568,16 +563,28 @@
   }
 }
 
-
-@media(max-width:760px){
-    .production-items-cotnainer {
-        padding: 15% 0;
+@media(max-height:780px){
+    .top-cont {
+        margin: 2% 8% 0;
+        width: 75.8%;
+    }
+    .go-back-btn {
+        top: 7%;
     }
     
-    .go-back-btn {
-        top: 3%;
-        left: 7%;
+    .prod-item-main {
+        font-size: 12px;
     }
+    
+    .production-page-item {
+        height: 79px;
+        }
+}
+
+@media(max-width:760px){
+  
+    
+
 
     .production-first-page.prod-go-left .production-page-item {
         margin-left: 0;
@@ -610,7 +617,7 @@
     }
     
     .production-items-cotnainer {
-        padding: 5% 0;
+        padding: 20% 0;
     }
     .services-container {
         overflow: auto;
@@ -759,16 +766,16 @@
   .projects-page .prev-btn-container {
     top: 20px;
     bottom: unset;
-    left: calc(50% - 25px);
+    left: calc(50% - 17.5px);
     z-index: 65;
-    width: 50px;
+    width: 45px;
 }
 .projects-page .next-btn-container {
     bottom: 20px;
     top: unset;
-    left: calc(50% - 25px);
+    left: calc(50% - 17.5px);
     z-index: 65;
-    width: 50px;
+    width: 45px;
 }
 .up-btn{
     display: none;
@@ -806,6 +813,10 @@
 .news-page .control-btn {
     width: 15px;
 }
+.go-back-btn {
+    left: 42px;
+    top: 24px;
+}
 
 }
 
@@ -822,26 +833,23 @@
     }
 }
 
-@media(max-width:500px){
-    .services-container .service-item {
-        font-size: 14px;
+@media (max-height:620px){
+    .service-item .item-icon {
+        width: 50px;
+        height: 50px;
     }
 }
 
-@media(max-height:780px){
-    .top-cont {
-        margin: 2% 8% 0;
-        width: 75.8%;
+@media(max-width:500px){
+
+    .services-container .service-item {
+        font-size: 14px;
     }
+
     .go-back-btn {
-        top: 7%;
+        left: 20px;
+        top: 16px;
     }
-    
-    .prod-item-main {
-        font-size: 12px;
-    }
-    
-    .production-page-item {
-        height: 79px;
-        }
+
 }
+
