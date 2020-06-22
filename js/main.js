@@ -283,16 +283,92 @@ function init () {
 (function(){
     var $stars_block = $(".stars-block");
 
-        var stars_count=$(window).width()<760 ? 500 : 600;
+        var stars_count=$(window).width()<760 ? 500 : 800;
 		$stars_block.each(function () {
 			for (var i = 0; i < stars_count; i++) {
-				var s = r(4,6);
-				var c = r(1,3);
-				$(this).append('<div class="star star-'+c+'" style="animation-duration:'+r(10, 20)+'s; animation-delay:'+r(0, 800)+'ms; top:'+r(-1,101)+'%; left:'+r(-1,101)+'%;width:'+s+'px;height:'+s+'px;" />');
+				var s = i >= stars_count-40?r(5,6):r(2,4);
+                var c = r(1,3);
+                
+                    var pos_arr = [
+                        {
+                            top : r(-1, 50),
+                            left : r(-1, 12.5)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(13, 25)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(13, 25)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(26, 50)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(26, 50)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(26, 50)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(51, 75)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(51, 75)
+                        },
+                        {
+                            top : r(-1, 50),
+                            left : r(76, 100)
+                        },
+                        {
+                            top : r(51, 101),
+                            left : r(51, 101)
+                        },
+                        {
+                            top : r(51, 101),
+                            left : r(51, 101)
+                        },
+                        {
+                            top : r(51, 101),
+                            left : r(51, 101)
+                        },
+                        {
+                            top : r(51, 101),
+                            left : r(51, 101)
+                        },
+                        {
+                            top : r(51, 101),
+                            left : r(0, 50)
+                        },
+                    ];
+                
+             
+
+                var index = r(0, pos_arr.length - 1);
+
+                var top = pos_arr[index].top;
+                var left = pos_arr[index].left;
+
+				$(this).append('<div class="star star-'+c+'" style="animation-duration:'+r(10, 20)+'s; animation-delay:'+r(0, 800)+'ms; top:'+top+'%; left:'+left+'%;width:'+s+'px;height:'+s+'px;" />');
 			}
 		});
 
 		function r(min, max) {
-			return Math.round(Math.random() * (max - min) + min);
-		}
+            // return Math.round(Math.random() * (max - min)) + min;
+            
+            return Math.floor(Math.random() * (max + 1 - min)) + min;
+        }
+        
+        // var a = [0, 0, 0];
+        // for (let j = 0; j < 1000; j++) {
+        //     var q = r(0, 2);
+        //     a[q]++;
+        // }
+        // console.log(a);
 })();
