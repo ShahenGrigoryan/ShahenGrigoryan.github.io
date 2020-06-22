@@ -88,9 +88,7 @@ function prodPage(){
 $(document).ready(()=>{
     billboardSizing();
     sortSlides();
-    $(".map-main").scrollbar();
-    $(".popup-content").scrollbar();
-})
+});
 
 
 
@@ -285,12 +283,11 @@ function init () {
 (function(){
     var $stars_block = $(".stars-block");
 
-		var stars_count = 400;
-
+        var stars_count=$(window).width()<760 ? 150 : 400;
 		$stars_block.each(function () {
 			for (var i = 0; i < stars_count; i++) {
 				var s = r(4,6);
-				var c = r(1,3);
+				var c = r(1,10);
 				$(this).append('<div class="star star-'+c+'" style="animation-duration:'+r(10, 20)+'s; animation-delay:'+r(0, 800)+'ms; top:'+r(-1,101)+'%; left:'+r(-1,101)+'%;width:'+s+'px;height:'+s+'px;" />');
 			}
 		});
