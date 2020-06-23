@@ -114,6 +114,7 @@ body{
 
 .logo-img {
     margin-right: 3px;
+    cursor: pointer;
 }
 .page-mid-img img {
     width: 671px;
@@ -1167,6 +1168,12 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     justify-content: center;
     align-items: center;
     min-width: 130px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.contacts-forms button:hover {
+    box-shadow: 0 7px 13px 0px #00000042;
 }
 
 .contacts-wrapper {

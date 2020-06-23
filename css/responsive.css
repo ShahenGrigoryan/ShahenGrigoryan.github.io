@@ -224,7 +224,7 @@
     
 
     .menu-link:hover {
-        font-size: 20px;
+        transform: scale(1.05) perspective(1px);
     }
 
     .menu-link.info-link:hover img {
@@ -242,16 +242,16 @@
     
     
     .main-page-layer img:first-child {
-        bottom: 50px;
-        width: 269px;
-        left: -50px;
+        bottom: 5px;
+        width: 450px;
+        left: -156px;
     }
 
     
     .main-page-layer img:last-child {
-        width: 269px;
-        right: -50px;
-        top: 50px;
+        width: 450px;
+        right: -156px;
+        top: 5px;
     }
 
     

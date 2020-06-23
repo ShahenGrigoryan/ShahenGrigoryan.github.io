@@ -304,7 +304,7 @@ function init () {
     console.time("func")
     var $stars_block = $(".stars-block");
 
-        var stars_count=$(window).width()<760 ? 300 : 300;
+        var stars_count=$(window).width()<760 ? 400 : 700;
 		$stars_block.each(function () {
 			for (var i = 0; i < stars_count; i++) {
 				var s = i >= stars_count-40?r(5,6):r(2,4);
