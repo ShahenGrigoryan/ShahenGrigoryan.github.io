@@ -215,6 +215,26 @@ $(document).on("click",".page-main-content",function(){
     }
 })
 
+$(document).on("click",".contacts-scroll-btn > img", function() {
+    // $(".contacts-scroll-btn").toggleClass("scroll-btn-hide");
+    $(this).hasClass("gotop")? 
+    $(".contacts-wrapper")[0].scrollTop=-$(".contacts-wrapper")[0].scrollHeight: 
+    $(".contacts-wrapper")[0].scrollTop=$(".contacts-wrapper")[0].scrollHeight;
+})
+
+$(".contacts-wrapper").on("scroll", function() {
+    
+    if($(this)[0].scrollTop<=20){
+        $(".contacts-up-btn-container").addClass("scroll-btn-hide");
+        $(".contacts-down-btn-container").removeClass("scroll-btn-hide");
+    }else if(($(".contacts-wrapper")[0].scrollHeight - $(".contacts-wrapper").height()-20) <= $(this)[0].scrollTop){
+        $(".contacts-up-btn-container").removeClass("scroll-btn-hide");
+        $(".contacts-down-btn-container").addClass("scroll-btn-hide");
+    }else{
+        $(".scroll-btn-hide").removeClass("scroll-btn-hide");
+    }
+})
+
 $(window).on("resize", function() {
 
     sortSlides();
@@ -222,7 +242,7 @@ $(window).on("resize", function() {
     setTimeout(() => {
       billboardSizing();
     }, 730);
-    
+   
 })
 
 $(".video-play-button").on("click", function(){
@@ -281,9 +301,10 @@ function init () {
 };
 
 (function(){
+    console.time("func")
     var $stars_block = $(".stars-block");
 
-        var stars_count=$(window).width()<760 ? 500 : 800;
+        var stars_count=$(window).width()<760 ? 300 : 300;
 		$stars_block.each(function () {
 			for (var i = 0; i < stars_count; i++) {
 				var s = i >= stars_count-40?r(5,6):r(2,4);
@@ -360,15 +381,8 @@ function init () {
 		});
 
 		function r(min, max) {
-            // return Math.round(Math.random() * (max - min)) + min;
-            
             return Math.floor(Math.random() * (max + 1 - min)) + min;
         }
-        
-        // var a = [0, 0, 0];
-        // for (let j = 0; j < 1000; j++) {
-        //     var q = r(0, 2);
-        //     a[q]++;
-        // }
-        // console.log(a);
+        console.timeEnd("func")
+    
 })();
